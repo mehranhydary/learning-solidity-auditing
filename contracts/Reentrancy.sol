@@ -22,7 +22,7 @@ contract EtherStore {
     modifier noReentrant() {
         require(!locked, "No reentrancy");
         locked = true;
-        _;
+        _; // function executes first and then turns to false
         locked = false;
     }
 
